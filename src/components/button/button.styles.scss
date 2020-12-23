@@ -1,0 +1,24 @@
+.button {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+  margin: 15px 0px 0px 0;
+  cursor: pointer;
+  background-color: #f8f7de;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s,
+    box-shadow 0.2s;
+  &:active {
+    font-weight: bold;
+  }
+  &_equal {
+    grid-row: 4/6;
+    grid-column: 4;
+  }
+  &_allClear {
+    letter-spacing: normal;
+  }
+}

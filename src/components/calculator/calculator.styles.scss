@@ -1,0 +1,47 @@
+@mixin hidenScroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  //for mozilla scroll bar transparent illusion
+  scrollbar-width: thin;
+  scrollbar-color: #bccd95 #bccd95;
+  //for other browser scroll bar transparent illusion
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+}
+.mainWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.calculatorContainer {
+  width: 10em;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #3d4543;
+  letter-spacing: 5px;
+  font-size: 1.8rem;
+}
+.calcScreen {
+  height: 65px;
+  background-color: #bccd95;
+  text-align: right;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+  @include hidenScroll();
+}
+.screenView {
+  padding: 15px 15px 0px 10px;
+  @include hidenScroll();
+}
+.calcButtons {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
+}
+
