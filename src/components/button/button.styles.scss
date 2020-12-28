@@ -21,4 +21,19 @@
   &_allClear {
     letter-spacing: normal;
   }
+  &_minus {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .button {
+    width: 35px;
+  }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 325px) {
+  .button {
+    width: 45px;
+  }
 }

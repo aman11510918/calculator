@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import "./calculator.styles.scss";
 import Button from "../button/button.index";
+import Calculate from "../calculations/calculation";
 
 export default class Calculator extends Component {
   constructor() {
     super();
     this.state = {
       display: "0",
+      calculate: new Calculate(),
     };
   }
   isButtonClick = (targetValue) => {
-    console.log("Button Clicked is:", targetValue);
+    this.setState({ display: this.state.calculate.calc(targetValue) });
   };
   render() {
+    console.log("this.state.calculate :", this.state.calculate);
     return (
       <React.Fragment>
         <h1>Do your Math</h1>
@@ -58,7 +61,7 @@ export default class Calculator extends Component {
                 value="9"
               />
               <Button
-                className="button"
+                className={`button`}
                 onClick={this.isButtonClick}
                 value="&minus;"
               />
@@ -115,7 +118,7 @@ export default class Calculator extends Component {
               <Button
                 className="button button_allClear"
                 onClick={this.isButtonClick}
-                value={false ? "C" : "AC"}
+                value={this.state.calculate.isCAC ? "C" : "AC"}
               />
             </div>
           </div>
